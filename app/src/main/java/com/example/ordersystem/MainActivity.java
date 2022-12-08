@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sp =  findViewById(R.id.spinner);
+        sp =  findViewById(R.id.sp);
 
         // 設定 sp 元件 ItemSelected 事件的 listener
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

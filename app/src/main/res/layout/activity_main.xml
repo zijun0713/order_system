@@ -51,33 +51,34 @@
             android:textColor="#000" />
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/sp"
+            android:entries="@array/num_table"
             android:layout_width="wrap_content"
-            android:layout_height="35dp" />
+            android:layout_height="wrap_content" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:insetLeft="3dp"
-            android:insetRight="3dp"
+            android:insetLeft="2dp"
+            android:insetRight="2dp"
             android:text="糕點輕食"
-            android:textSize="15sp" />
+            android:textSize="13sp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:insetLeft="3dp"
-            android:insetRight="3dp"
+            android:insetLeft="2dp"
+            android:insetRight="2dp"
             android:text="義式咖啡"
-            android:textSize="15sp" />
+            android:textSize="13sp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:insetLeft="3dp"
-            android:insetRight="3dp"
+            android:insetLeft="2dp"
+            android:insetRight="2dp"
             android:text="精選茶類"
-            android:textSize="15sp" />
+            android:textSize="13sp" />
 
     </LinearLayout>
 
