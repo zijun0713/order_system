@@ -12,27 +12,45 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="#fff">
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="20"
             android:text="LOGO"
             android:gravity="center"
-            android:textSize="32sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="	#F0F8FF"
             android:background="#00477D" />
 
         <TextView
             android:layout_width="0dp"
-            android:layout_weight="2"
             android:layout_height="match_parent"
+            android:layout_weight="45"
             android:text="日期/time"
             android:gravity="center"
             android:textSize="24sp"
             android:textColor="#F0F8FF"
             android:background="#5E86C1" />
+
+        <TextView
+            android:id="@+id/table"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="15"
+            android:text="桌號:"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:textColor="#000" />
+
+        <Spinner
+            android:id="@+id/sp"
+            android:entries="@array/num_table"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="20" />
 
     </LinearLayout>
 
@@ -40,41 +58,33 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="15"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="#fff">
 
-        <TextView
-            android:id="@+id/table"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="桌號:"
-            android:textSize="20sp"
-            android:textColor="#000" />
 
-        <Spinner
-            android:id="@+id/sp"
-            android:entries="@array/num_table"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:insetLeft="2dp"
             android:insetRight="2dp"
             android:text="糕點輕食"
             android:textSize="13sp" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:insetLeft="2dp"
             android:insetRight="2dp"
             android:text="義式咖啡"
             android:textSize="13sp" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:insetLeft="2dp"
             android:insetRight="2dp"
             android:text="精選茶類"
@@ -88,7 +98,7 @@
         android:layout_weight="70"
         android:orientation="vertical"
         android:background="#C4E1FF"
-        android:padding="18sp">
+        android:padding="12sp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -104,33 +114,31 @@
 
             <Button
                 android:id="@+id/plus1"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:backgroundTint="#EA7500"
-                android:insetLeft="20dp"
-                android:insetRight="20dp"
                 android:text="+"
                 android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/num1"
-                android:layout_width="wrap_content"
+                android:layout_width="25sp"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@id/plus1"
+                android:gravity="center"
                 android:text="0"
+                android:textColor="#000"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/minus1"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@id/num1"
                 android:backgroundTint="#EA7500"
-                android:insetLeft="20dp"
-                android:insetRight="20dp"
-                android:text="-"
+                android:text="–"
                 android:textSize="22sp" />
 
         </RelativeLayout>
@@ -149,33 +157,31 @@
 
             <Button
                 android:id="@+id/plus2"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:backgroundTint="#EA7500"
-                android:insetLeft="20dp"
-                android:insetRight="20dp"
                 android:text="+"
                 android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/num2"
-                android:layout_width="wrap_content"
+                android:layout_width="25sp"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@id/plus2"
+                android:gravity="center"
                 android:text="0"
+                android:textColor="#000"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/minus2"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@id/num2"
                 android:backgroundTint="#EA7500"
-                android:insetLeft="20dp"
-                android:insetRight="20dp"
-                android:text="-"
+                android:text="–"
                 android:textSize="22sp" />
 
         </RelativeLayout>
@@ -194,33 +200,31 @@
 
             <Button
                 android:id="@+id/plus3"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:backgroundTint="#EA7500"
-                android:insetLeft="20dp"
-                android:insetRight="20dp"
                 android:text="+"
                 android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/num3"
-                android:layout_width="wrap_content"
+                android:layout_width="25sp"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@id/plus3"
+                android:gravity="center"
                 android:text="0"
+                android:textColor="#000"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/minus3"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@id/num3"
                 android:backgroundTint="#EA7500"
-                android:insetLeft="20dp"
-                android:insetRight="20dp"
-                android:text="-"
+                android:text="–"
                 android:textSize="22sp" />
 
         </RelativeLayout>
@@ -231,7 +235,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"
-        android:padding="8sp">
+        android:padding="8sp"
+        android:background="#fff">
 
         <Button
             android:id="@+id/check"
