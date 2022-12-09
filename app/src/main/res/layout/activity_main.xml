@@ -64,6 +64,7 @@
 
 
         <Button
+            android:id="@+id/button1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -73,6 +74,7 @@
             android:textSize="13sp" />
 
         <Button
+            android:id="@+id/button2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -82,6 +84,7 @@
             android:textSize="13sp" />
 
         <Button
+            android:id="@+id/button3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -93,6 +96,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/mView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="70"
@@ -100,135 +104,9 @@
         android:background="#C4E1FF"
         android:padding="12sp">
 
-        <RelativeLayout
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="手工起司蛋糕"
-                android:textColor="#000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/plus1"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:backgroundTint="#EA7500"
-                android:text="+"
-                android:textSize="22sp" />
-
-            <TextView
-                android:id="@+id/num1"
-                android:layout_width="25sp"
-                android:layout_height="wrap_content"
-                android:layout_toStartOf="@id/plus1"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="#000"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/minus1"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_toStartOf="@id/num1"
-                android:backgroundTint="#EA7500"
-                android:text="–"
-                android:textSize="22sp" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="水果蛋糕"
-                android:textColor="#000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/plus2"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:backgroundTint="#EA7500"
-                android:text="+"
-                android:textSize="22sp" />
-
-            <TextView
-                android:id="@+id/num2"
-                android:layout_width="25sp"
-                android:layout_height="wrap_content"
-                android:layout_toStartOf="@id/plus2"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="#000"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/minus2"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_toStartOf="@id/num2"
-                android:backgroundTint="#EA7500"
-                android:text="–"
-                android:textSize="22sp" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="布朗尼"
-                android:textColor="#000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/plus3"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:backgroundTint="#EA7500"
-                android:text="+"
-                android:textSize="22sp" />
-
-            <TextView
-                android:id="@+id/num3"
-                android:layout_width="25sp"
-                android:layout_height="wrap_content"
-                android:layout_toStartOf="@id/plus3"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="#000"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/minus3"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_toStartOf="@id/num3"
-                android:backgroundTint="#EA7500"
-                android:text="–"
-                android:textSize="22sp" />
-
-        </RelativeLayout>
-
+            android:layout_height="match_parent"/>
     </LinearLayout>
 
     <RelativeLayout

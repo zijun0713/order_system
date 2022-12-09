@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#C4E1FF"
+    android:padding="12sp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="卡布奇諾"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/plus2_1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="#EA7500"
+            android:text="+"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/num2_1"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/plus2_1"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/minus2_1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/num2_1"
+            android:backgroundTint="#EA7500"
+            android:text="–"
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="拿鐵咖啡"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/plus2_2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="#EA7500"
+            android:text="+"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/num2_2"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/plus2_2"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/minus2_2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/num2_2"
+            android:backgroundTint="#EA7500"
+            android:text="–"
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="招牌花式咖啡"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/plus2_3"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="#EA7500"
+            android:text="+"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/num2_3"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/plus2_3"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/minus2_3"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/num2_3"
+            android:backgroundTint="#EA7500"
+            android:text="–"
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
