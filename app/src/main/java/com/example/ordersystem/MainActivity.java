@@ -13,6 +13,8 @@ import android.widget.Toast;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 
+import com.google.android.material.datepicker.MaterialDatePicker;
+
 public class MainActivity extends AppCompatActivity {
     Button button1, button2, button3;
     /*
@@ -62,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         /*
         //手工起司蛋糕
         plus1_1 = (Button) findViewById(R.id.plus1_1);
@@ -83,13 +86,14 @@ public class MainActivity extends AppCompatActivity {
         minus1_3.setOnClickListener(this::onClick);
         */
         sp =  findViewById(R.id.sp);
+        sp.setSelection(0, false);
 
         // 設定 sp 元件 ItemSelected 事件的 listener
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView parent, View view, int position, long id) {
                 String result = parent.getItemAtPosition(position).toString();
-                Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
+                //Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
             }
 
             @Override

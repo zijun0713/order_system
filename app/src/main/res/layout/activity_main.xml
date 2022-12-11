@@ -28,7 +28,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="45"
+            android:layout_weight="35"
             android:text="日期/time"
             android:gravity="center"
             android:textSize="24sp"
@@ -37,9 +37,8 @@
 
         <TextView
             android:id="@+id/table"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="15"
             android:text="桌號:"
             android:textSize="20sp"
             android:layout_gravity="center"
@@ -48,9 +47,8 @@
         <Spinner
             android:id="@+id/sp"
             android:entries="@array/num_table"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="20" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
