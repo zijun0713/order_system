@@ -1,23 +1,20 @@
 package com.example.ordersystem;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewStructure;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
-
-import com.google.android.material.datepicker.MaterialDatePicker;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     Button button1, button2, button3;
-    /*
+
     //手工起司蛋糕
     Button plus1_1;
     Button minus1_1;
@@ -56,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     Button plus3_3;
     Button minus3_3;
     TextView num3_3;
-    */
+
     private Spinner sp;
 
     @Override
@@ -65,26 +62,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*
-        //手工起司蛋糕
-        plus1_1 = (Button) findViewById(R.id.plus1_1);
-        minus1_1 = (Button) findViewById(R.id.minus1_1);
-        num1_1 = (TextView) findViewById(R.id.num1_1);
-        plus1_1.setOnClickListener(this::onClick);
-        minus1_1.setOnClickListener(this::onClick);
-        //水果蛋糕
-        plus1_2 = (Button) findViewById(R.id.plus1_2);
-        minus1_2 = (Button) findViewById(R.id.minus1_2);
-        num1_2 = (TextView) findViewById(R.id.num1_2);
-        plus1_2.setOnClickListener(this::onClick);
-        minus1_2.setOnClickListener(this::onClick);
-        //布朗尼
-        plus1_3 = (Button) findViewById(R.id.plus1_3);
-        minus1_3 = (Button) findViewById(R.id.minus1_3);
-        num1_3 = (TextView) findViewById(R.id.num1_3);
-        plus1_3.setOnClickListener(this::onClick);
-        minus1_3.setOnClickListener(this::onClick);
-        */
+
         sp =  findViewById(R.id.sp);
         sp.setSelection(0, false);
 
@@ -92,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView parent, View view, int position, long id) {
-                String result = parent.getItemAtPosition(position).toString();
+                //String result = parent.getItemAtPosition(position).toString();
                 //Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
             }
 
@@ -129,6 +107,67 @@ public class MainActivity extends AppCompatActivity {
             {
                 masterView.removeAllViews();//要加入內容版面前前移除掉所有已存在的版面
                 masterView.addView(View1,p);//加入糕點輕食視窗中的內容版面
+                //手工起司蛋糕
+                plus1_1 = (Button) findViewById(R.id.plus1_1);
+                minus1_1 = (Button) findViewById(R.id.minus1_1);
+                num1_1 = (TextView) findViewById(R.id.num1_1);
+                plus1_1.setOnClickListener(this::Click);
+                minus1_1.setOnClickListener(this::Click);
+                //水果蛋糕
+                plus1_2 = (Button) findViewById(R.id.plus1_2);
+                minus1_2 = (Button) findViewById(R.id.minus1_2);
+                num1_2 = (TextView) findViewById(R.id.num1_2);
+                plus1_2.setOnClickListener(this::Click);
+                minus1_2.setOnClickListener(this::Click);
+                //布朗尼
+                plus1_3 = (Button) findViewById(R.id.plus1_3);
+                minus1_3 = (Button) findViewById(R.id.minus1_3);
+                num1_3 = (TextView) findViewById(R.id.num1_3);
+                plus1_3.setOnClickListener(this::Click);
+                minus1_3.setOnClickListener(this::Click);
+            }
+
+            private void Click(View view) {
+                String s;
+                int tot ;
+                switch(view.getId()){
+                    case R.id.plus1_1:
+                        s = num1_1.getText().toString();
+                        tot = Integer.parseInt(s)+1;
+                        tot = check(tot);
+                        num1_1.setText(String.valueOf(tot));
+                        break;
+                    case R.id.minus1_1:
+                        s = num1_1.getText().toString();
+                        tot = Integer.parseInt(s)-1;
+                        tot = check(tot);
+                        num1_1.setText(String.valueOf(tot));
+                        break;
+                    case R.id.plus1_2:
+                        s = num1_2.getText().toString();
+                        tot = Integer.parseInt(s)+1;
+                        tot = check(tot);
+                        num1_2.setText(String.valueOf(tot));
+                        break;
+                    case R.id.minus1_2:
+                        s = num1_2.getText().toString();
+                        tot = Integer.parseInt(s)-1;
+                        tot = check(tot);
+                        num1_2.setText(String.valueOf(tot));
+                        break;
+                    case R.id.plus1_3:
+                        s = num1_3.getText().toString();
+                        tot = Integer.parseInt(s)+1;
+                        tot = check(tot);
+                        num1_3.setText(String.valueOf(tot));
+                        break;
+                    case R.id.minus1_3:
+                        s = num1_3.getText().toString();
+                        tot = Integer.parseInt(s)-1;
+                        tot = check(tot);
+                        num1_3.setText(String.valueOf(tot));
+                        break;
+                }
             }
         });
 
@@ -140,6 +179,67 @@ public class MainActivity extends AppCompatActivity {
             {
                 masterView.removeAllViews();
                 masterView.addView(View2);//加入義式咖啡視窗中的內容版面
+                //卡布奇諾
+                plus2_1 = (Button) findViewById(R.id.plus2_1);
+                minus2_1 = (Button) findViewById(R.id.minus2_1);
+                num2_1 = (TextView) findViewById(R.id.num2_1);
+                plus2_1.setOnClickListener(this::Click);
+                minus2_1.setOnClickListener(this::Click);
+                //拿鐵咖啡
+                plus2_2 = (Button) findViewById(R.id.plus2_2);
+                minus2_2 = (Button) findViewById(R.id.minus2_2);
+                num2_2 = (TextView) findViewById(R.id.num2_2);
+                plus2_2.setOnClickListener(this::Click);
+                minus2_2.setOnClickListener(this::Click);
+                //招牌花式咖啡
+                plus2_3 = (Button) findViewById(R.id.plus2_3);
+                minus2_3 = (Button) findViewById(R.id.minus2_3);
+                num2_3 = (TextView) findViewById(R.id.num2_3);
+                plus2_3.setOnClickListener(this::Click);
+                minus2_3.setOnClickListener(this::Click);
+            }
+
+            private void Click(View view) {
+                String s;
+                int tot ;
+                switch(view.getId()){
+                    case R.id.plus2_1:
+                        s = num2_1.getText().toString();
+                        tot = Integer.parseInt(s)+1;
+                        tot = check(tot);
+                        num2_1.setText(String.valueOf(tot));
+                        break;
+                    case R.id.minus2_1:
+                        s = num2_1.getText().toString();
+                        tot = Integer.parseInt(s)-1;
+                        tot = check(tot);
+                        num2_1.setText(String.valueOf(tot));
+                        break;
+                    case R.id.plus2_2:
+                        s = num2_2.getText().toString();
+                        tot = Integer.parseInt(s)+1;
+                        tot = check(tot);
+                        num2_2.setText(String.valueOf(tot));
+                        break;
+                    case R.id.minus2_2:
+                        s = num2_2.getText().toString();
+                        tot = Integer.parseInt(s)-1;
+                        tot = check(tot);
+                        num2_2.setText(String.valueOf(tot));
+                        break;
+                    case R.id.plus2_3:
+                        s = num2_3.getText().toString();
+                        tot = Integer.parseInt(s)+1;
+                        tot = check(tot);
+                        num2_3.setText(String.valueOf(tot));
+                        break;
+                    case R.id.minus2_3:
+                        s = num2_3.getText().toString();
+                        tot = Integer.parseInt(s)-1;
+                        tot = check(tot);
+                        num2_3.setText(String.valueOf(tot));
+                        break;
+                }
             }
         });
 
@@ -150,12 +250,73 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 masterView.removeAllViews();
-                masterView.addView(View3);//加入精選茶類視窗中的內容版面
+                masterView.addView(View3);//加入義式咖啡視窗中的內容版面
+                //藍莓果粒茶
+                plus3_1 = (Button) findViewById(R.id.plus3_1);
+                minus3_1 = (Button) findViewById(R.id.minus3_1);
+                num3_1 = (TextView) findViewById(R.id.num3_1);
+                plus3_1.setOnClickListener(this::Click);
+                minus3_1.setOnClickListener(this::Click);
+                //印度大吉嶺紅茶
+                plus3_2 = (Button) findViewById(R.id.plus3_2);
+                minus3_2 = (Button) findViewById(R.id.minus3_2);
+                num3_2 = (TextView) findViewById(R.id.num3_2);
+                plus3_2.setOnClickListener(this::Click);
+                minus3_2.setOnClickListener(this::Click);
+                //英國伯爵奶茶
+                plus3_3 = (Button) findViewById(R.id.plus3_3);
+                minus3_3 = (Button) findViewById(R.id.minus3_3);
+                num3_3 = (TextView) findViewById(R.id.num3_3);
+                plus3_3.setOnClickListener(this::Click);
+                minus3_3.setOnClickListener(this::Click);
+            }
+
+            private void Click(View view) {
+                String s;
+                int tot ;
+                switch(view.getId()){
+                    case R.id.plus3_1:
+                        s = num3_1.getText().toString();
+                        tot = Integer.parseInt(s)+1;
+                        tot = check(tot);
+                        num3_1.setText(String.valueOf(tot));
+                        break;
+                    case R.id.minus3_1:
+                        s = num3_1.getText().toString();
+                        tot = Integer.parseInt(s)-1;
+                        tot = check(tot);
+                        num3_1.setText(String.valueOf(tot));
+                        break;
+                    case R.id.plus3_2:
+                        s = num3_2.getText().toString();
+                        tot = Integer.parseInt(s)+1;
+                        tot = check(tot);
+                        num3_2.setText(String.valueOf(tot));
+                        break;
+                    case R.id.minus3_2:
+                        s = num3_2.getText().toString();
+                        tot = Integer.parseInt(s)-1;
+                        tot = check(tot);
+                        num3_2.setText(String.valueOf(tot));
+                        break;
+                    case R.id.plus3_3:
+                        s = num3_3.getText().toString();
+                        tot = Integer.parseInt(s)+1;
+                        tot = check(tot);
+                        num3_3.setText(String.valueOf(tot));
+                        break;
+                    case R.id.minus3_3:
+                        s = num3_3.getText().toString();
+                        tot = Integer.parseInt(s)-1;
+                        tot = check(tot);
+                        num3_3.setText(String.valueOf(tot));
+                        break;
+                }
             }
         });
     }
-    private void onClick(View view){
-        /*
+    /*private void onClick(View view){
+
         String s;
         int tot ;
         switch(view.getId()){
@@ -196,8 +357,8 @@ public class MainActivity extends AppCompatActivity {
                 num1_3.setText(String.valueOf(tot));
                 break;
         }
-        */
-    }
+
+    }*/
 
     private int check(int number){
         if(number<=0) number = 0;
@@ -205,4 +366,8 @@ public class MainActivity extends AppCompatActivity {
         return number;
     }
 
+    public void check_meal(View view) {
+        Intent intent = new Intent(this,CheckActivity.class);
+        startActivity(intent);
+    }
 }
