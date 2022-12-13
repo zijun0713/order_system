@@ -111,19 +111,19 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"
-        android:padding="8sp"
+        android:padding="6sp"
         android:background="#fff">
 
         <Button
             android:id="@+id/check"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:onClick="check_meal"
             android:text="結帳"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:onClick="check_meal"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
