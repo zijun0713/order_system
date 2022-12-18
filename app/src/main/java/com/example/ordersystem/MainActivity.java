@@ -15,6 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     private static final int ItemCake = 3;
     private static final int ItemCoffee = 3;
@@ -44,10 +46,16 @@ public class MainActivity extends AppCompatActivity {
             R.id.item2_1,R.id.item2_2,R.id.item2_3,
             R.id.item3_1,R.id.item3_2,R.id.item3_3
     };
+    int ItemPrice[]={
+            125,200,180,
+            160,150,200,
+            180,130,140
+    };
 
     Button button1, button2, button3;
-
+    TextView sum;
     private Spinner sp;
+
 
 
     @Override
@@ -111,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             int tot = 0;
+            int tot_original = 0;
             int id;
             int flag = 1;
             String s = "";
@@ -119,16 +128,21 @@ public class MainActivity extends AppCompatActivity {
                 for(int i=0;i<ItemCake;i++){
                     if(id == IdButtonUp[i]){
                         s = ItemNumber[i].getText().toString();
-                        tot = Integer.parseInt(s)+1;
+                        tot_original =Integer.parseInt(s);
+                        tot = tot_original+1;
+                        tot = check(tot);
+                        Calculate(ItemPrice[i]*(tot-tot_original));
                         flag = 0;
                     }
                     else if(id == IdButtonDown[i]){
                         s = ItemNumber[i].getText().toString();
-                        tot = Integer.parseInt(s)-1;
+                        tot_original =Integer.parseInt(s);
+                        tot = tot_original-1;
+                        tot = check(tot);
+                        Calculate(ItemPrice[i]*(tot-tot_original));
                         flag = 0;
                     }
                     if(flag == 0) {
-                        tot = check(tot);
                         ItemNumber[i].setText(String.valueOf(tot));
                         flag = 1;
                         break;
@@ -152,6 +166,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             int tot = 0;
+            int tot_original = 0;
             int id;
             int flag = 1;
             String s = "";
@@ -160,16 +175,21 @@ public class MainActivity extends AppCompatActivity {
                 for(int i=ItemCake;i<ItemCake+ItemCoffee;i++){
                     if(id == IdButtonUp[i]){
                         s = ItemNumber[i].getText().toString();
-                        tot = Integer.parseInt(s)+1;
+                        tot_original =Integer.parseInt(s);
+                        tot = tot_original+1;
+                        tot = check(tot);
+                        Calculate(ItemPrice[i]*(tot-tot_original));
                         flag = 0;
                     }
                     else if(id == IdButtonDown[i]){
                         s = ItemNumber[i].getText().toString();
-                        tot = Integer.parseInt(s)-1;
+                        tot_original =Integer.parseInt(s);
+                        tot = tot_original-1;
+                        tot = check(tot);
+                        Calculate(ItemPrice[i]*(tot-tot_original));
                         flag = 0;
                     }
                     if(flag == 0) {
-                        tot = check(tot);
                         ItemNumber[i].setText(String.valueOf(tot));
                         flag = 1;
                         break;
@@ -194,6 +214,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             int tot = 0;
+            int tot_original = 0;
             int id;
             int flag = 1;
             String s = "";
@@ -202,16 +223,21 @@ public class MainActivity extends AppCompatActivity {
                 for(int i=ItemCake+ItemCoffee;i<ItemCake+ItemCoffee+ItemTea;i++){
                     if(id == IdButtonUp[i]){
                         s = ItemNumber[i].getText().toString();
-                        tot = Integer.parseInt(s)+1;
+                        tot_original =Integer.parseInt(s);
+                        tot = tot_original+1;
+                        tot = check(tot);
+                        Calculate(ItemPrice[i]*(tot-tot_original));
                         flag = 0;
                     }
                     else if(id == IdButtonDown[i]){
                         s = ItemNumber[i].getText().toString();
-                        tot = Integer.parseInt(s)-1;
+                        tot_original =Integer.parseInt(s);
+                        tot = tot_original-1;
+                        tot = check(tot);
+                        Calculate(ItemPrice[i]*(tot-tot_original));
                         flag = 0;
                     }
                     if(flag == 0) {
-                        tot = check(tot);
                         ItemNumber[i].setText(String.valueOf(tot));
                         flag = 1;
                         break;
@@ -254,8 +280,17 @@ public class MainActivity extends AppCompatActivity {
         else if(number>=10) number = 10;
         return number;
     }
-
-
+    int Sum =0;
+    private  void Calculate(int value){
+        //Toast .makeText(MainActivity.this,String.valueOf(value),Toast.LENGTH_SHORT).show();
+        sum = (TextView) findViewById(R.id.sum);
+        Sum = Integer.valueOf(sum.getText().toString());
+        Sum +=value;
+        //Toast .makeText(MainActivity.this,String.valueOf(Sum),Toast.LENGTH_SHORT).show();
+        sum.setText(String.valueOf(Sum));
+    }
+    ArrayList<CharSequence> Final_Name = new ArrayList<CharSequence>();
+    ArrayList<Integer> Final_Number = new ArrayList<Integer>();
     public void check_meal(View view) {
         //Intent intent = new Intent(this,CheckActivity.class);
         //startActivity(intent);
@@ -268,12 +303,16 @@ public class MainActivity extends AppCompatActivity {
                 if(Number!=0){
                     Name = ItemName[i].getText();
                     string += String.valueOf(Name)+"\t\t\t\t"+Number+"\n";
+
+                    Final_Name.add(Name);
+                    Final_Number.add(Number);
                 }
             }
             catch (Exception e){
 
             }
         }
+        string = string+"Total   "+sum.getText().toString();
         new AlertDialog.Builder(MainActivity.this)
                 .setTitle("確認餐點")
                 .setIcon(R.drawable.ic_launcher_foreground)
@@ -281,13 +320,19 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton("確定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
+                        //時間
+                        //桌號
+                        //Final_Name        品項
+                        //Final_Number      數量
+
+                        //finish();
                     }
                 })
                 .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
+                        Final_Name.removeAll(Final_Name);
+                        Final_Number.removeAll(Final_Number);
                     }
                 })
                 .show();
