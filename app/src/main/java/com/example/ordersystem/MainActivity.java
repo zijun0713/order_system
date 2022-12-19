@@ -337,4 +337,9 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .show();
     }
+
+    public void history(View view) {
+        Intent intent = new Intent(this,CheckActivity.class);
+        startActivity(intent);
+    }
 }
