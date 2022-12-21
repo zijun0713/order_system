@@ -25,15 +25,21 @@
             android:textColor="	#F0F8FF"
             android:background="#00477D" />
 
-        <TextView
+        <TextClock
+            android:id="@+id/date"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="35"
-            android:text="日期/time"
             android:gravity="center"
-            android:textSize="24sp"
-            android:textColor="#F0F8FF"
-            android:background="#5E86C1" />
+            android:textSize="25sp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#000"
+            android:background="#5E86C1"
+            android:textStyle="bold"
+            android:format24Hour="yyyy/MM/dd HH:mm:ss EE"
+
+            />
+
 
         <TextView
             android:id="@+id/table"
@@ -100,6 +106,7 @@
         android:orientation="vertical"
         android:background="#fff">
         <Button
+            android:id="@+id/history"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="點餐紀錄"

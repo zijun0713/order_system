@@ -2,10 +2,11 @@ package com.example.ordersystem;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -15,9 +16,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
+
     private static final int ItemCake = 3;
     private static final int ItemCoffee = 3;
     private static final int ItemTea = 3;
@@ -281,6 +289,9 @@ public class MainActivity extends AppCompatActivity {
         return number;
     }
     int Sum =0;
+    //抓取當前系統時間
+    String nowDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+
     private  void Calculate(int value){
         //Toast .makeText(MainActivity.this,String.valueOf(value),Toast.LENGTH_SHORT).show();
         sum = (TextView) findViewById(R.id.sum);
@@ -313,33 +324,62 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         string = string+"Total   "+sum.getText().toString();
-        new AlertDialog.Builder(MainActivity.this)
-                .setTitle("確認餐點")
-                .setIcon(R.drawable.ic_launcher_foreground)
-                .setMessage(string)
-                .setPositiveButton("確定", new DialogInterface.OnClickListener() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("確認餐點");
+        builder.setIcon(R.drawable.ic_launcher_foreground);
+        builder.setMessage(string);
+        builder.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // sp.getSelectedItem().toString();
+                //時間
+                //桌號
+                //Final_Name        品項
+                //Final_Number      數量
+                //finish()
+                /**************將資料寫入資料庫**********************/
+              /*  new Thread(new Runnable() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        //時間
-                        //桌號
-                        //Final_Name        品項
-                        //Final_Number      數量
-
-                        //finish();
+                    public void run() {
+                        // 將資料寫入資料庫
+                        MainActivity con = new MainActivity();
+                        con.insertData();
                     }
-                })
-                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        Final_Name.removeAll(Final_Name);
-                        Final_Number.removeAll(Final_Number);
-                    }
-                })
-                .show();
+                }).start();*/
+            }
+        }); builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Final_Name.removeAll(Final_Name);
+                Final_Number.removeAll(Final_Number);
+            }
+        });
+        builder.show();
     }
 
     public void history(View view) {
         Intent intent = new Intent(this,CheckActivity.class);
         startActivity(intent);
     }
+
+/**************將資料寫入資料庫**********************/
+   /* public void insertData() {
+        try {
+            Connection con = DriverManager.getConnection("http://10.0.2.2/phpmyadmin/index.php", "root", "123456");
+            String sql = "INSERT INTO `orderlist` (`o_order`) VALUES ('" + nowDate + "')";
+            String sql2 = "INSERT INTO `orderlist` (`o_order`) VALUES ('" + Final_Name + "')";
+            String sql3 = "INSERT INTO `orderlist` (`o_order`) VALUES ('" + Final_Number + "')";
+            Statement st = con.createStatement();
+            st.executeUpdate(sql);
+            st.executeUpdate(sql2);
+            st.executeUpdate(sql3);
+            st.close();
+            Log.v("DB", "寫入資料完成：");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            Log.e("DB", "寫入資料失敗");
+            Log.e("DB", e.toString());
+        }
+    }*/
+
 }

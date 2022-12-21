@@ -6,13 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:scrollbars="vertical"
     tools:context=".CheckActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="check your meals"
-        android:textSize="28sp"
-        android:textStyle="bold" />
+        android:text="歷史紀錄" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="資料顯示在這" />
 </LinearLayout>
