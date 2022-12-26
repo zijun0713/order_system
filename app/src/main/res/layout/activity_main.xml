@@ -14,16 +14,16 @@
         android:layout_weight="10"
         android:orientation="horizontal"
         android:background="#fff">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="20"
-            android:text="LOGO"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="	#F0F8FF"
-            android:background="#00477D" />
+
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/logo1"
+            ></ImageView>
 
         <TextClock
             android:id="@+id/date"
