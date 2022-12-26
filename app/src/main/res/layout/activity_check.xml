@@ -15,9 +15,17 @@
         android:layout_height="wrap_content"
         android:text="歷史紀錄" />
 
+    <Button
+        android:id="@+id/buttonCC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonCC"
+        android:text="清空歷史紀錄" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="資料顯示在這" />
+
 </LinearLayout>

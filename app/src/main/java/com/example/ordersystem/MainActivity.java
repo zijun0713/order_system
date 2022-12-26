@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.content.DialogInterface;
@@ -259,15 +260,7 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
         MyDBHelper DH = MyDBHelper.getInstance(this);
         // 取得可讀寫的資料庫
         db = DH.getWritableDatabase();
-        // 將要新增的資料放到ContentValues
-        ContentValues values = new ContentValues();
-        values.put("Datetime", "2022-12-26 14:32:35");
-        values.put("Tablenumber", 5);
-        values.put("Orders", "卡布奇諾");
-        values.put("Number", "999");
-        values.put("Total", "250");
-        // 新增資料到history欄位
-        db.insert("history", null, values);
+        //db.delete("history","*",null);
 
 
     }
@@ -306,8 +299,6 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
         return number;
     }
     int Sum =0;
-    //抓取當前系統時間
-    String nowDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
 
     private  void Calculate(int value){
         //Toast .makeText(MainActivity.this,String.valueOf(value),Toast.LENGTH_SHORT).show();
@@ -320,17 +311,22 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
     ArrayList<CharSequence> Final_Name = new ArrayList<CharSequence>();
     ArrayList<Integer> Final_Number = new ArrayList<Integer>();
     public void check_meal(View view) {
+
         //Intent intent = new Intent(this,CheckActivity.class);
         //startActivity(intent);
         CharSequence Name;
         int Number;
         String string = "";
+        String DATANAME="";
+        String DATANumber="";
         for(int i=0;i<ItemCake+ItemCoffee+ItemTea;i++){
             try {
                 Number = Integer.parseInt(ItemNumber[i].getText().toString());
                 if(Number!=0){
                     Name = ItemName[i].getText();
                     string += String.valueOf(Name)+"\t\t\t\t"+Number+"\n";
+                    DATANAME+=String.valueOf(Name)+"\t"+Number+"\n";
+                   // DATANumber+=Number+"\n";
 
                     Final_Name.add(Name);
                     Final_Number.add(Number);
@@ -345,6 +341,10 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
         builder.setTitle("確認餐點");
         builder.setIcon(R.drawable.ic_launcher_foreground);
         builder.setMessage(string);
+
+        String finalDATANAME = DATANAME;
+        String finalDATANumber = DATANumber;
+
         builder.setPositiveButton("確定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -354,7 +354,15 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
                 //Final_Name        品項
                 //Final_Number      數量
                 //finish()
-
+                // 將要新增的資料放到ContentValues
+                ContentValues values = new ContentValues();
+                values.put("Datetime", "2022-12-26 14:32:35");
+                values.put("Tablenumber", 1);
+                values.put("Orders", finalDATANAME);
+                values.put("Number", finalDATANumber);
+                values.put("Total",Integer.valueOf(sum.getText().toString()) );
+                // 新增資料到history欄位
+                db.insert("history", null, values);
             }
         }); builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
@@ -365,7 +373,10 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
         });
         builder.show();
     }
-
+    public void history(View view) {
+        Intent intent = new Intent(this,CheckActivity.class);
+        startActivity(intent);
+    }
 
 
 
