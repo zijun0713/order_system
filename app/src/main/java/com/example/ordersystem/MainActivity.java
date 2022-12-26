@@ -4,9 +4,11 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -15,6 +17,8 @@ import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.facebook.stetho.Stetho;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -59,8 +63,7 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
     Button button1, button2, button3;
     TextView sum;
     private Spinner sp;
-    private SQLiteDatabase db;
-
+    public SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +92,7 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
         });
 
 
-
+        //Stetho.initializeWithDefaults(this);
 
         //screen_switch
         LayoutInflater inflater =  getLayoutInflater();
@@ -250,17 +253,22 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
                 }
             }
         });
+
+
         // 呼叫MyDBHelper
-        SqlDataBaseHelper DH = SqlDataBaseHelper.getInstance(this);
+        MyDBHelper DH = MyDBHelper.getInstance(this);
         // 取得可讀寫的資料庫
         db = DH.getWritableDatabase();
         // 將要新增的資料放到ContentValues
         ContentValues values = new ContentValues();
-        values.put("Name", "Ivan");
-        values.put("Age", 18);
-        values.put("Email", "ivan@BeanBean.com");
-        // 新增資料到UserData欄位
-        db.insert("UserData", null, values);
+        values.put("Datetime", "2022-12-26 14:32:35");
+        values.put("Tablenumber", 5);
+        values.put("Orders", "卡布奇諾");
+        values.put("Number", "999");
+        values.put("Total", "250");
+        // 新增資料到history欄位
+        db.insert("history", null, values);
+
 
     }
     private void Setup(String page){

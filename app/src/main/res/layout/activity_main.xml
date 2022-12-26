@@ -36,7 +36,7 @@
             android:textColor="#000"
             android:background="#5E86C1"
             android:textStyle="bold"
-            android:format24Hour="yyyy/MM/dd HH:mm:ss EE"
+            android:format24Hour="MM/dd EE HH:mm:ss "
 
             />
 
