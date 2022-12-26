@@ -2,11 +2,11 @@ package com.example.ordersystem;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import android.widget.AdapterView.OnItemSelectedListener;
+
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -16,15 +16,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
 
     private static final int ItemCake = 3;
     private static final int ItemCoffee = 3;
@@ -63,11 +59,12 @@ public class MainActivity extends AppCompatActivity {
     Button button1, button2, button3;
     TextView sum;
     private Spinner sp;
-
+    private SQLiteDatabase db;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -253,6 +250,18 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        // 呼叫MyDBHelper
+        SqlDataBaseHelper DH = SqlDataBaseHelper.getInstance(this);
+        // 取得可讀寫的資料庫
+        db = DH.getWritableDatabase();
+        // 將要新增的資料放到ContentValues
+        ContentValues values = new ContentValues();
+        values.put("Name", "Ivan");
+        values.put("Age", 18);
+        values.put("Email", "ivan@BeanBean.com");
+        // 新增資料到UserData欄位
+        db.insert("UserData", null, values);
+
     }
     private void Setup(String page){
         int i = 0;
@@ -337,15 +346,7 @@ public class MainActivity extends AppCompatActivity {
                 //Final_Name        品項
                 //Final_Number      數量
                 //finish()
-                /**************將資料寫入資料庫**********************/
-              /*  new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        // 將資料寫入資料庫
-                        MainActivity con = new MainActivity();
-                        con.insertData();
-                    }
-                }).start();*/
+
             }
         }); builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
@@ -357,29 +358,7 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
-    public void history(View view) {
-        Intent intent = new Intent(this,CheckActivity.class);
-        startActivity(intent);
-    }
 
-/**************將資料寫入資料庫**********************/
-   /* public void insertData() {
-        try {
-            Connection con = DriverManager.getConnection("http://10.0.2.2/phpmyadmin/index.php", "root", "123456");
-            String sql = "INSERT INTO `orderlist` (`o_order`) VALUES ('" + nowDate + "')";
-            String sql2 = "INSERT INTO `orderlist` (`o_order`) VALUES ('" + Final_Name + "')";
-            String sql3 = "INSERT INTO `orderlist` (`o_order`) VALUES ('" + Final_Number + "')";
-            Statement st = con.createStatement();
-            st.executeUpdate(sql);
-            st.executeUpdate(sql2);
-            st.executeUpdate(sql3);
-            st.close();
-            Log.v("DB", "寫入資料完成：");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            Log.e("DB", "寫入資料失敗");
-            Log.e("DB", e.toString());
-        }
-    }*/
+
 
 }
