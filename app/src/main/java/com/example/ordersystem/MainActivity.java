@@ -3,6 +3,7 @@ package com.example.ordersystem;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -18,7 +19,7 @@ import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.widget.AdapterView.OnItemSelectedListener;
 import com.facebook.stetho.Stetho;
 
 import java.text.SimpleDateFormat;
@@ -63,15 +64,16 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
 
     Button button1, button2, button3;
     TextView sum;
-    private Spinner sp;
+    public Spinner sp;
     public SQLiteDatabase db;
-
+    public int sppp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         String page;
 
 
@@ -83,7 +85,9 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView parent, View view, int position, long id) {
                 //String result = parent.getItemAtPosition(position).toString();
-                //Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
+               // Toast.makeText(MainActivity.this, "result", Toast.LENGTH_LONG).show();
+                // sppp = Activity.this.getResources().getStringArray(R.array.num_table)[position];
+                sppp = (int)sp.getSelectedItem();
             }
 
             @Override
@@ -91,6 +95,7 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
 
             }
         });
+
 
 
         //Stetho.initializeWithDefaults(this);
@@ -341,7 +346,11 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
         builder.setTitle("確認餐點");
         builder.setIcon(R.drawable.ic_launcher_foreground);
         builder.setMessage(string);
-
+        /*-------------------------------抓取時間-------------------------------------*/
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date curDate = new Date(System.currentTimeMillis());
+        String str = formatter.format(curDate);
+        /*-------------------------------抓取時間-------------------------------------*/
         String finalDATANAME = DATANAME;
         String finalDATANumber = DATANumber;
 
@@ -356,8 +365,9 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
                 //finish()
                 // 將要新增的資料放到ContentValues
                 ContentValues values = new ContentValues();
-                values.put("Datetime", "2022-12-26 14:32:35");
-                values.put("Tablenumber", 1);
+                values.put("Datetime", str);
+                //values.put("Tablenumber", Integer.valueOf(sp.toString()));
+                values.put("Tablenumber", sppp);
                 values.put("Orders", finalDATANAME);
                 values.put("Number", finalDATANumber);
                 values.put("Total",Integer.valueOf(sum.getText().toString()) );

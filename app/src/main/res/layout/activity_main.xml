@@ -18,8 +18,9 @@
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="13"
             android:layout_gravity="center"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/logo1"
@@ -54,7 +55,8 @@
             android:id="@+id/sp"
             android:entries="@array/num_table"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 

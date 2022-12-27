@@ -2,6 +2,7 @@ package com.example.ordersystem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -44,7 +45,7 @@ public class CheckActivity extends MainActivity {
                     int total = c.getInt(5);
                     int num = c.getCount();
 
-                    string +="日期:"+datetime+"\t桌號:"+tablenumber+"\n餐點:\n"+orders+" "+number+"\n總價:"+total+"\n";
+                    string +="\n日期:"+datetime+"\t桌號:"+tablenumber+"\n餐點:\n"+orders+" "+number+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t總價:"+total+"\n";
 
 
                     /*Log.d("點餐資訊", "日期:" + datetime);
@@ -61,6 +62,8 @@ public class CheckActivity extends MainActivity {
 
     }
     public void buttonCC(View view) {
-            db.delete("history","*",null);
+            db.delete("history",null,null);
+            Intent intent = new Intent(this,CheckActivity.class);
+            startActivity(intent);
     }
 }
