@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.view.LayoutInflater;
@@ -67,27 +68,29 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
     public Spinner sp;
     public SQLiteDatabase db;
     public int sppp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        Log.d("taggg", "b桌號:" + sppp);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         String page;
 
-
-        sp =  findViewById(R.id.sp);
+        sp = findViewById(R.id.sp);
         sp.setSelection(0, false);
 
         // 設定 sp 元件 ItemSelected 事件的 listener
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView parent, View view, int position, long id) {
-                //String result = parent.getItemAtPosition(position).toString();
-               // Toast.makeText(MainActivity.this, "result", Toast.LENGTH_LONG).show();
-                // sppp = Activity.this.getResources().getStringArray(R.array.num_table)[position];
-                sppp = (int)sp.getSelectedItem();
+                String result = parent.getItemAtPosition(position).toString();
+                Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
+               //  sppp = Activity.this.getStringArray(R.array.num_table)[position];
+               // parent.setVisibility(view.VISIBLE);
+                sppp = position;
+                Log.d("taggg", "桌號:" + sppp);
             }
 
             @Override
@@ -373,6 +376,7 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
                 values.put("Total",Integer.valueOf(sum.getText().toString()) );
                 // 新增資料到history欄位
                 db.insert("history", null, values);
+                Log.d("taggg", "f桌號:" + sppp);
             }
         }); builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
