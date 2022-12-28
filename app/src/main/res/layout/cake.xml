@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#C4E1FF"
+    android:background="#8A817C"
     android:padding="12sp">
 
     <RelativeLayout
@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="手工起司蛋糕"
-            android:textColor="#000"
+            android:textColor="#231F1C"
             android:textSize="20sp"
             android:textStyle="bold"
             />
@@ -39,7 +39,7 @@
             android:layout_toStartOf="@id/plus1_1"
             android:gravity="center"
             android:text="0"
-            android:textColor="#000"
+            android:textColor="#231F1C"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -56,14 +56,15 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp">
 
         <TextView
             android:id="@+id/item1_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="水果蛋糕"
-            android:textColor="#000"
+            android:textColor="#231F1C"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -83,7 +84,7 @@
             android:layout_toStartOf="@id/plus1_2"
             android:gravity="center"
             android:text="0"
-            android:textColor="#000"
+            android:textColor="#231F1C"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -107,7 +108,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="布朗尼"
-            android:textColor="#000"
+            android:textColor="#231F1C"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -127,7 +128,7 @@
             android:layout_toStartOf="@id/plus1_3"
             android:gravity="center"
             android:text="0"
-            android:textColor="#000"
+            android:textColor="#231F1C"
             android:textSize="24sp"
             android:textStyle="bold" />
 

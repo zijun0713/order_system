@@ -6,20 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"
         android:orientation="horizontal"
-        android:background="#FFDA96">
+        android:background="#463f3a">
 
 
         <ImageView
             android:id="@+id/logo"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="70dp"
             android:layout_weight="15"
             android:layout_gravity="center"
             app:srcCompat="@drawable/logo" />
@@ -32,7 +32,7 @@
             android:gravity="center"
             android:textSize="25sp"
             android:fontFamily="sans-serif-light"
-            android:textColor="#000"
+            android:textColor="#F4F3EE"
             android:textStyle="bold"
             android:format24Hour="MM/dd EE HH:mm:ss " />
 
@@ -45,7 +45,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_gravity="center"
-            android:textColor="#000" />
+            android:textColor="#F4F3EE" />
 
         <Spinner
             android:id="@+id/sp"
@@ -61,13 +61,14 @@
         android:layout_height="0dp"
         android:layout_weight="8"
         android:orientation="horizontal"
-        android:background="#fff">
+        android:background="#8A817C" >
 
         <Button
             android:id="@+id/button1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_margin="10dp"
             android:text="糕點輕食"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -78,6 +79,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_margin="10dp"
             android:text="義式咖啡"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -88,6 +90,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_margin="10dp"
             android:text="精選茶類"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -98,14 +101,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7"
+        android:layout_weight="8"
         android:orientation="vertical"
-        android:background="#fff">
+        android:background="#8A817C">
         <Button
             android:id="@+id/history"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
             android:text="點餐紀錄"
+            android:textSize="24sp"
+            android:drawableStart="@drawable/clipboard"
             android:onClick="history" />
     </LinearLayout>
 
@@ -116,7 +122,7 @@
         android:layout_height="0dp"
         android:layout_weight="70"
         android:orientation="vertical"
-        android:background="#C4E1FF"
+        android:background="#8A817C"
         android:padding="12sp">
 
         <TextView
@@ -129,28 +135,28 @@
         android:layout_height="0dp"
         android:layout_weight="10"
         android:padding="6sp"
-        android:background="#fff">
+        android:background="#463F3A">
 
         <Button
             android:id="@+id/check"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:onClick="check_meal"
-            android:text="結帳"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:background="@drawable/button_blue"/>
+            android:background="@drawable/checkout"/>
 
         <TextView
             android:id="@+id/total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="15dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:text="Total : "
-            android:textColor="#000"
+            android:textColor="#BCB8B1"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -158,11 +164,12 @@
             android:id="@+id/sum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="15dp"
             android:layout_alignParentBottom="true"
             android:layout_toStartOf="@id/check"
             android:layout_toEndOf="@id/total"
             android:text="0"
-            android:textColor="#000"
+            android:textColor="#BCB8B1"
             android:textSize="30sp"
             android:textStyle="bold" />
 
