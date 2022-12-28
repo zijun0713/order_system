@@ -20,20 +20,21 @@
             android:text="手工起司蛋糕"
             android:textColor="#000"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
 
         <Button
             android:id="@+id/plus1_1"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentEnd="true"
-            android:backgroundTint="#EA7500"
+            android:background="@drawable/plus_minus_btn"
             android:text="+"
             android:textSize="22sp" />
 
         <TextView
             android:id="@+id/num1_1"
-            android:layout_width="25dp"
+            android:layout_width="48dp"
             android:layout_height="wrap_content"
             android:layout_toStartOf="@id/plus1_1"
             android:gravity="center"
@@ -44,10 +45,10 @@
 
         <Button
             android:id="@+id/minus1_1"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_toStartOf="@id/num1_1"
-            android:backgroundTint="#EA7500"
+            android:background="@drawable/plus_minus_btn"
             android:text="–"
             android:textSize="22sp" />
 
@@ -68,16 +69,16 @@
 
         <Button
             android:id="@+id/plus1_2"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentEnd="true"
-            android:backgroundTint="#EA7500"
+            android:background="@drawable/plus_minus_btn"
             android:text="+"
             android:textSize="22sp" />
 
         <TextView
             android:id="@+id/num1_2"
-            android:layout_width="25dp"
+            android:layout_width="48dp"
             android:layout_height="wrap_content"
             android:layout_toStartOf="@id/plus1_2"
             android:gravity="center"
@@ -88,10 +89,10 @@
 
         <Button
             android:id="@+id/minus1_2"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_toStartOf="@id/num1_2"
-            android:backgroundTint="#EA7500"
+            android:background="@drawable/plus_minus_btn"
             android:text="–"
             android:textSize="22sp" />
 
@@ -112,16 +113,16 @@
 
         <Button
             android:id="@+id/plus1_3"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentEnd="true"
-            android:backgroundTint="#EA7500"
+            android:background="@drawable/plus_minus_btn"
             android:text="+"
             android:textSize="22sp" />
 
         <TextView
             android:id="@+id/num1_3"
-            android:layout_width="25dp"
+            android:layout_width="48dp"
             android:layout_height="wrap_content"
             android:layout_toStartOf="@id/plus1_3"
             android:gravity="center"
@@ -132,10 +133,10 @@
 
         <Button
             android:id="@+id/minus1_3"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_toStartOf="@id/num1_3"
-            android:backgroundTint="#EA7500"
+            android:background="@drawable/plus_minus_btn"
             android:text="–"
             android:textSize="22sp" />
 

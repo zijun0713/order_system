@@ -33,7 +33,7 @@
 
         <TextView
             android:id="@+id/num3_1"
-            android:layout_width="25dp"
+            android:layout_width="48dp"
             android:layout_height="wrap_content"
             android:layout_toStartOf="@id/plus3_1"
             android:gravity="center"
@@ -77,7 +77,7 @@
 
         <TextView
             android:id="@+id/num3_2"
-            android:layout_width="25dp"
+            android:layout_width="48dp"
             android:layout_height="wrap_content"
             android:layout_toStartOf="@id/plus3_2"
             android:gravity="center"
@@ -121,7 +121,7 @@
 
         <TextView
             android:id="@+id/num3_3"
-            android:layout_width="25dp"
+            android:layout_width="48dp"
             android:layout_height="wrap_content"
             android:layout_toStartOf="@id/plus3_3"
             android:gravity="center"
