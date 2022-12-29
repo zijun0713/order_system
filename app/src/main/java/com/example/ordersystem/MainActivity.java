@@ -71,13 +71,13 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d("taggg", "b桌號:" + sppp);
+        //Log.d("taggg", "b桌號:" + sppp);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String page;
 
+        /*
         sp = findViewById(R.id.sp);
         sp.setSelection(0, false);
 
@@ -98,6 +98,8 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
 
             }
         });
+
+         */
 
 
 
