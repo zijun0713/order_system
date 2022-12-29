@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +31,7 @@ public class CheckActivity extends MainActivity {
         buttonCC = findViewById(R.id.buttonCC);
         button = findViewById(R.id.button);
         textView = findViewById(R.id.textView);
-
+        textView.setMovementMethod(ScrollingMovementMethod.getInstance());
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,7 +46,7 @@ public class CheckActivity extends MainActivity {
                     int total = c.getInt(5);
                     int num = c.getCount();
 
-                    string +="\n日期:"+datetime+"\t桌號:"+tablenumber+"\n餐點:\n"+orders+" "+number+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t總價:"+total+"\n"+"---------------------------------------------------------------------\n";
+                    string +="\n日期:"+datetime+"\t桌號:"+tablenumber+"\n餐點:\n"+orders+" "+number+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t總價:"+total+"\n"+"---------------------------------------------------------------\n";
 
 
                     /*Log.d("點餐資訊", "日期:" + datetime);
