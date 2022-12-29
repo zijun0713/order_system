@@ -65,9 +65,11 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
 
     Button button1, button2, button3;
     TextView sum;
+    String string = "";
     public Spinner sp;
     public SQLiteDatabase db;
     public int sppp;
+    int TableNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,11 +120,29 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
         final LinearLayout View2 = (LinearLayout) coffee.findViewById(R.id.view2);//找出義式咖啡視窗中的內容版面
         final LinearLayout View3 = (LinearLayout) tea.findViewById(R.id.view3);//找出精選茶類視窗中的內容版面
 
+
+
+
+
         setContentView(activity_main);
         final LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT
         );
+        Spinner spinner = (Spinner)findViewById(R.id.sp);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.num_table, android.R.layout.simple_spinner_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                TableNumber = position;
+                //Toast .makeText(MainActivity.this,String.valueOf(position),Toast.LENGTH_SHORT).show();
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+
         button1 = (Button) activity_main.findViewById(R.id.button1); //找出主視窗中第1個及設定按鈕動作
         button1.setOnClickListener(new View.OnClickListener()
         {
@@ -274,6 +294,18 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
 
 
     }
+    public class SpinnerActivity extends Activity implements OnItemSelectedListener {
+
+        public void onItemSelected(AdapterView<?> parent, View view,
+                                   int pos, long id) {
+            // An item was selected. You can retrieve the selected item using
+            // parent.getItemAtPosition(pos)
+        }
+
+        public void onNothingSelected(AdapterView<?> parent) {
+            // Another interface callback
+        }
+    }
     private void Setup(String page){
         int i = 0;
         int first = 0,last = 0,flag = 1;
@@ -326,14 +358,16 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
         //startActivity(intent);
         CharSequence Name;
         int Number;
-        String string = "";
+
         String DATANAME="";
         String DATANumber="";
+        string += "桌號："+String.valueOf(TableNumber+1)+"\n";
         for(int i=0;i<ItemCake+ItemCoffee+ItemTea;i++){
             try {
                 Number = Integer.parseInt(ItemNumber[i].getText().toString());
                 if(Number!=0){
                     Name = ItemName[i].getText();
+
                     string += String.valueOf(Name)+"\t\t\t\t"+Number+"\n";
                     DATANAME+=String.valueOf(Name)+"\t"+Number+"\n";
                    // DATANumber+=Number+"\n";
@@ -364,7 +398,7 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
             public void onClick(DialogInterface dialogInterface, int i) {
                 CharSequence Name;
                 int number;
-                String string = "";
+                //String string = "";
                 String DATANAME="";
                 String DATANumber="";
                 // sp.getSelectedItem().toString();
@@ -377,13 +411,13 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
                 ContentValues values = new ContentValues();
                 values.put("Datetime", str);
                 //values.put("Tablenumber", Integer.valueOf(sp.toString()));
-                values.put("Tablenumber", sppp);
+                values.put("Tablenumber", TableNumber+1);
                 values.put("Orders", finalDATANAME);
                 values.put("Number", finalDATANumber);
                 values.put("Total",Integer.valueOf(sum.getText().toString()) );
                 // 新增資料到history欄位
                 db.insert("history", null, values);
-                Log.d("taggg", "f桌號:" + sppp);
+                //Log.d("taggg", "f桌號:" + sppp);
 
                 for(i=0;i<ItemCake+ItemCoffee+ItemTea;i++){
                     try {
@@ -394,10 +428,12 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
 
                     }
                 }
+                string = "";
             }
         }); builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
+            public void onClick(DialogInterface dialogInterface, int i)  {
+                string = "";
                 Final_Name.removeAll(Final_Name);
                 Final_Number.removeAll(Final_Number);
             }

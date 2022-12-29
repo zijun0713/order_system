@@ -63,7 +63,7 @@ public class CheckActivity extends MainActivity {
     }
     public void buttonCC(View view) {
             db.delete("history",null,null);
-            Intent intent = new Intent(this,CheckActivity.class);
+            Intent intent = new Intent(this,MainActivity.class);
             startActivity(intent);
     }
 }
