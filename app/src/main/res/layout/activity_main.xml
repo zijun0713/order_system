@@ -12,16 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"
-        android:orientation="horizontal"
-        android:background="#463f3a">
+        android:background="#916B50"
+        android:orientation="horizontal">
 
 
         <ImageView
             android:id="@+id/logo"
             android:layout_width="0dp"
             android:layout_height="70dp"
-            android:layout_weight="15"
             android:layout_gravity="center"
+            android:layout_weight="15"
             app:srcCompat="@drawable/logo" />
 
         <TextClock
@@ -29,93 +29,96 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="35"
-            android:gravity="center"
-            android:textSize="25sp"
             android:fontFamily="sans-serif-light"
+            android:format24Hour="MM/dd EE HH:mm:ss "
+            android:gravity="center"
             android:textColor="#F4F3EE"
-            android:textStyle="bold"
-            android:format24Hour="MM/dd EE HH:mm:ss " />
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
 
         <TextView
             android:id="@+id/table"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="桌號:"
-            android:textSize="20sp"
-            android:textStyle="bold"
             android:layout_gravity="center"
-            android:textColor="#F4F3EE" />
+            android:text="桌號:"
+            android:textColor="#F4F3EE"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/sp"
-            android:entries="@array/num_table"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:theme="@style/ToolbarTheme"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:background="#906B50"
+            android:entries="@array/num_table"
+            android:popupBackground="@drawable/clipboard"
+            android:theme="@style/ToolbarTheme" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="13dp"
         android:layout_weight="8"
-        android:orientation="horizontal"
-        android:background="#8A817C" >
+        android:background="#8A817C"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/button1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="55dp"
             android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/main_btn"
             android:text="糕點輕食"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:background="@drawable/main_btn"/>
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="55dp"
             android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/main_btn"
             android:text="義式咖啡"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:background="@drawable/main_btn" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="55dp"
             android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/main_btn"
             android:text="精選茶類"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:background="@drawable/main_btn" />
+            android:textStyle="bold" />
 
     </LinearLayout>
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="8dp"
         android:layout_weight="8"
-        android:orientation="vertical"
-        android:background="#8A817C">
+        android:background="#8A817C"
+        android:orientation="vertical">
+
         <Button
             android:id="@+id/history"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="10dp"
-            android:text="點餐紀錄"
-            android:textSize="24sp"
             android:drawableStart="@drawable/clipboard"
-            android:onClick="history" />
+            android:onClick="history"
+            android:text="點餐紀錄"
+            android:textSize="24sp" />
     </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/mView"
@@ -128,33 +131,35 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="13dp"
         android:layout_weight="10"
-        android:padding="6sp"
-        android:background="#463F3A">
+        android:background="#533D2C"
+        android:padding="6sp">
 
         <Button
             android:id="@+id/check"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_margin="8dp"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:onClick="check_meal"
-            android:background="@drawable/checkout"/>
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/checkout"
+            android:onClick="check_meal" />
 
         <TextView
             android:id="@+id/total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
             android:text="Total :"
             android:textColor="#BCB8B1"
             android:textSize="30sp"
@@ -163,14 +168,15 @@
         <TextView
             android:id="@+id/sum"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginVertical="15dp"
-            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="24dp"
             android:layout_toStartOf="@id/check"
             android:layout_toEndOf="@id/total"
             android:text="0"
             android:textColor="#BCB8B1"
-            android:textSize="30sp"
+            android:textSize="34dp"
             android:textStyle="bold" />
 
     </RelativeLayout>
