@@ -360,6 +360,11 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
         builder.setPositiveButton("確定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                CharSequence Name;
+                int number;
+                String string = "";
+                String DATANAME="";
+                String DATANumber="";
                 // sp.getSelectedItem().toString();
                 //時間
                 //桌號
@@ -377,6 +382,16 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
                 // 新增資料到history欄位
                 db.insert("history", null, values);
                 Log.d("taggg", "f桌號:" + sppp);
+
+                for(i=0;i<ItemCake+ItemCoffee+ItemTea;i++){
+                    try {
+                        ItemNumber[i].setText(String.valueOf(0));
+                        sum.setText(String.valueOf(0));
+                    }
+                    catch (Exception e){
+
+                    }
+                }
             }
         }); builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
