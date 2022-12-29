@@ -50,6 +50,14 @@
             android:background="@drawable/plus_minus_btn"
             android:text="–"
             android:textSize="22sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/minus3_1"
+            android:text="......(180)   "
+            android:textColor="#231F1C"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
     </RelativeLayout>
 
@@ -95,6 +103,14 @@
             android:background="@drawable/plus_minus_btn"
             android:text="–"
             android:textSize="22sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/minus3_2"
+            android:text="......(130)   "
+            android:textColor="#231F1C"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
     </RelativeLayout>
 
@@ -139,6 +155,14 @@
             android:background="@drawable/plus_minus_btn"
             android:text="–"
             android:textSize="22sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/minus3_3"
+            android:text="......(140)   "
+            android:textColor="#231F1C"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
     </RelativeLayout>
 

@@ -20,8 +20,7 @@
             android:text="手工起司蛋糕"
             android:textColor="#231F1C"
             android:textSize="20sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/plus1_1"
@@ -52,6 +51,15 @@
             android:text="–"
             android:textSize="22sp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/minus1_1"
+            android:text="......(125)   "
+            android:textColor="#231F1C"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -67,6 +75,7 @@
             android:textColor="#231F1C"
             android:textSize="20sp"
             android:textStyle="bold" />
+
 
         <Button
             android:id="@+id/plus1_2"
@@ -96,6 +105,15 @@
             android:background="@drawable/plus_minus_btn"
             android:text="–"
             android:textSize="22sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/minus1_2"
+            android:text="......(200)   "
+            android:textColor="#231F1C"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
     </RelativeLayout>
 
@@ -140,6 +158,14 @@
             android:background="@drawable/plus_minus_btn"
             android:text="–"
             android:textSize="22sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/minus1_3"
+            android:text="......(180)   "
+            android:textColor="#231F1C"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
     </RelativeLayout>
 

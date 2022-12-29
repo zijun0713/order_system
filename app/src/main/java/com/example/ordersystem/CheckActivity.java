@@ -45,7 +45,7 @@ public class CheckActivity extends MainActivity {
                     int total = c.getInt(5);
                     int num = c.getCount();
 
-                    string +="\n日期:"+datetime+"\t桌號:"+tablenumber+"\n餐點:\n"+orders+" "+number+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t總價:"+total+"\n";
+                    string +="\n日期:"+datetime+"\t桌號:"+tablenumber+"\n餐點:\n"+orders+" "+number+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t總價:"+total+"\n"+"---------------------------------------------------------------------\n";
 
 
                     /*Log.d("點餐資訊", "日期:" + datetime);
