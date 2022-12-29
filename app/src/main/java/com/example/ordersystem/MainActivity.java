@@ -361,6 +361,7 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
 
         String DATANAME="";
         String DATANumber="";
+        string = "";
         string += "桌號："+String.valueOf(TableNumber+1)+"\n";
         for(int i=0;i<ItemCake+ItemCoffee+ItemTea;i++){
             try {
@@ -433,7 +434,6 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
         }); builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i)  {
-                string = "";
                 Final_Name.removeAll(Final_Name);
                 Final_Number.removeAll(Final_Number);
             }
