@@ -129,6 +129,7 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT
         );
+
         Spinner spinner = (Spinner)findViewById(R.id.sp);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.num_table, android.R.layout.simple_spinner_item);
         spinner.setAdapter(adapter);
@@ -253,6 +254,7 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
             }
 
             int tot = 0;
+
             int tot_original = 0;
             int id;
             int flag = 1;
@@ -323,7 +325,6 @@ public class MainActivity<sqlDataBaseHelper> extends AppCompatActivity {
         }
         else {
             flag = 0;
-            Toast .makeText(MainActivity.this,"SetUp Error",Toast.LENGTH_SHORT).show();
         }
         if(flag == 1){
             for(i=first;i<last;i++){

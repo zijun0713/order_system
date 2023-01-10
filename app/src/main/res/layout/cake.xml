@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#8A817C"
-    android:padding="12sp">
+    android:padding="6sp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toStartOf="@id/minus1_1"
-            android:text="......(125)   "
+            android:text="(125)   "
             android:textColor="#231F1C"
             android:textSize="18sp"
             android:textStyle="bold"/>
@@ -110,7 +110,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toStartOf="@id/minus1_2"
-            android:text="......(200)   "
+            android:text="(200)   "
             android:textColor="#231F1C"
             android:textSize="18sp"
             android:textStyle="bold"/>
@@ -162,7 +162,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toStartOf="@id/minus1_3"
-            android:text="......(180)   "
+            android:text="(180)   "
             android:textColor="#231F1C"
             android:textSize="18sp"
             android:textStyle="bold"/>
